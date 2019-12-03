@@ -1,24 +1,39 @@
 $(function() {
   // jQuery goes here...
-  let gallery = $(".gallery");
-  let images = [
-      "images/laptop-mobile_small.jpg",
-      "images/laptop-on-table_small.jpg",
-      "images/people-office-group-team_small.jpg",
-  ];
-  gallery.data("availableImages", images);
-  console.log(gallery.data("availableImages"));
-  gallery.data("name", "The Awesome Gallery");
-  console.log(gallery.data());
-  gallery.removeData("name");
-  console.log(gallery.data("name"));
 
-  let firstPara = $("p:first");
-  console.log(firstPara.data("mydata"));
+  //****Retrieving and Changing the Content of an Element****
+  // text(), html()
+  // let firstPara = $("p:first");
+  // console.log(firstPara.text());
+  // console.log(firstPara.html());
+  // //firstPara.text("<strong>Hello</strong> World!");
+  // firstPara.html("<strong>Hello</strong> World!");
+
+  //mini challenge append some text to the first paragraph
+  let firstParagraph = $("p:first");
+  //firstParagraph.html(firstParagraph.html() + " I am the appended data!");
+  firstParagraph.html(function () {
+    return firstParagraph.html() + "I am the appended data!";
+  });
+  //firstParagraph.append(" I am the appended data!");
 
 
   //****Changing the Data of an Element****
-
+  // let gallery = $(".gallery");
+  // let images = [
+  //   "images/laptop-mobile_small.jpg",
+  //   "images/laptop-on-table_small.jpg",
+  //   "images/people-office-group-team_small.jpg",
+  // ];
+  // gallery.data("availableImages", images);
+  // console.log(gallery.data("availableImages"));
+  // gallery.data("name", "The Awesome Gallery");
+  // console.log(gallery.data());
+  // gallery.removeData("name");
+  // console.log(gallery.data("name"));
+  //
+  // let firstPara = $("p:first");
+  // console.log(firstPara.data("mydata"));
 
   //****Adding or Removing CSS Classes****
   // $("a").addClass("fancy-link");
