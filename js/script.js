@@ -1,6 +1,26 @@
 $(function() {
   // jQuery goes here...
+  $(".gallery").css("display", "none"); //hide
 
+  let redBox = $(".red-box");
+  let blueBox = $(".blue-box");
+  let greenBox = $(".green-box");
+  console.log(redBox.css("width"));
+  console.log(redBox.width());
+
+  redBox.css("background-color", "orange");
+  $("p").css("font-size", "18px");
+  redBox.css("width", "+=20px");
+  blueBox.css("height", "-=20px");
+  greenBox.css("width", "+=45px");
+
+  let properties = $("p").css(["font-size", "line-height", "color"]);
+  console.log(properties);
+  console.log(properties["color"]);
+
+  redBox.css("user-select", function () {
+    return "none";
+  });
 
   //*
   // ***Coding Activity: Creating an Image SlideShow
