@@ -1,6 +1,18 @@
 $(function() {
   // jQuery goes here...
 
+  //***Working with Click Handlers****
+  // $("#btn-click").click(function (event) {
+  //   console.log(event);
+  //   alert("Button Was Clicked");
+  // });
+
+  //mini challenge add a click listener to the red box on the page so that when you click it it will only fade to
+  //50 percent capacity
+  // $(".red-box").click(function () {
+  //   $(this).fadeTo("500", "0.5");
+  // });
+
   //****Retrieving and Changing the Content of an Element****
   // text(), html()
   // let firstPara = $("p:first");
@@ -10,11 +22,11 @@ $(function() {
   // firstPara.html("<strong>Hello</strong> World!");
 
   //mini challenge append some text to the first paragraph
-  let firstParagraph = $("p:first");
-  //firstParagraph.html(firstParagraph.html() + " I am the appended data!");
-  firstParagraph.html(function () {
-    return firstParagraph.html() + "I am the appended data!";
-  });
+  // let firstParagraph = $("p:first");
+  // //firstParagraph.html(firstParagraph.html() + " I am the appended data!");
+  // firstParagraph.html(function () {
+  //   return firstParagraph.html() + "I am the appended data!";
+  // });
   //firstParagraph.append(" I am the appended data!");
 
 
