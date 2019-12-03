@@ -1,8 +1,24 @@
 $(function() {
   // jQuery goes here...
-  $(".gallery").css("display", "none");
+  let gallery = $(".gallery");
+  let images = [
+      "images/laptop-mobile_small.jpg",
+      "images/laptop-on-table_small.jpg",
+      "images/people-office-group-team_small.jpg",
+  ];
+  gallery.data("availableImages", images);
+  console.log(gallery.data("availableImages"));
+  gallery.data("name", "The Awesome Gallery");
+  console.log(gallery.data());
+  gallery.removeData("name");
+  console.log(gallery.data("name"));
 
-  
+  let firstPara = $("p:first");
+  console.log(firstPara.data("mydata"));
+
+
+  //****Changing the Data of an Element****
+
 
   //****Adding or Removing CSS Classes****
   // $("a").addClass("fancy-link");
