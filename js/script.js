@@ -1,26 +1,52 @@
 $(function() {
   // jQuery goes here...
-  $(".gallery").css("display", "none"); //hide
+  $(".gallery").css("display", "none");
 
-  let redBox = $(".red-box");
-  let blueBox = $(".blue-box");
-  let greenBox = $(".green-box");
-  console.log(redBox.css("width"));
-  console.log(redBox.width());
+  
 
-  redBox.css("background-color", "orange");
-  $("p").css("font-size", "18px");
-  redBox.css("width", "+=20px");
-  blueBox.css("height", "-=20px");
-  greenBox.css("width", "+=45px");
+  //****Adding or Removing CSS Classes****
+  // $("a").addClass("fancy-link");
+  // $("p:first").addClass("large emphasize");
+  //
+  // $("li li").addClass(function (index) {
+  //   $(this).addClass("item-" + index);
+  // });
+  //
+  // $("div").addClass(function (index, currentClass) {
+  //   if(currentClass === "dummy"){
+  //     return "red-box";
+  //   }
+  // });
 
-  let properties = $("p").css(["font-size", "line-height", "color"]);
-  console.log(properties);
-  console.log(properties["color"]);
+  //$(".red-box").removeClass();
+  //$(".red-box").removeClass("red-box").addClass("blue-box");
 
-  redBox.css("user-select", function () {
-    return "none";
-  });
+  //mini assignment - select the dummy element and remove the dummy class from it and instead add the green box class
+  //$(".dummy").removeClass("dummy").addClass("green-box");
+
+
+  //****Changing the CSS Properties of Elements****
+  // $(".gallery").css("display", "none"); //hide
+  //
+  // let redBox = $(".red-box");
+  // let blueBox = $(".blue-box");
+  // let greenBox = $(".green-box");
+  // console.log(redBox.css("width"));
+  // console.log(redBox.width());
+  //
+  // redBox.css("background-color", "orange");
+  // $("p").css("font-size", "18px");
+  // redBox.css("width", "+=20px");
+  // blueBox.css("height", "-=20px");
+  // greenBox.css("width", "+=45px");
+  //
+  // let properties = $("p").css(["font-size", "line-height", "color"]);
+  // console.log(properties);
+  // console.log(properties["color"]);
+  //
+  // redBox.css("user-select", function () {
+  //   return "none";
+  // });
 
   //*
   // ***Coding Activity: Creating an Image SlideShow
