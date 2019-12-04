@@ -1,6 +1,31 @@
 $(function() {
   // jQuery goes here...
 
+  //****Adding MouseEnter and MouseLeave Handlers****
+  $("#btn-hover").hover(function () {
+    alert("button was hovered");
+  });
+
+  $(".green-box").hover(function () {
+    $(this).text("I was hovered");
+  });
+
+  //this is so that when i leave the blue box the hover event dose not fire again. I will reset.
+  let blueBox = $(".blue-box");
+  // blueBox.mouseenter(function () {
+  //   $(this).stop().fadeTo(500, 0.7);
+  // });
+  // blueBox.mouseleave(function () {
+  //   $(this).stop().fadeTo(500, 1);
+  // });
+
+  //Another way to handel this is to use: hover(handlerIn, handlerOut)
+  blueBox.hover(function() {
+    $(this).stop().fadeTo(500, 0.7);
+  }, function () {
+    $(this).stop().fadeTo(500, 1);
+  });
+
   //****Adding Hover Handlers****
   // :hover in CSS
   // $(".green-box").hover(function () {
