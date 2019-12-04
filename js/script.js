@@ -1,6 +1,21 @@
 $(function() {
   // jQuery goes here...
 
+  //***Passing Additional Data to Events***
+  //Greeting a user
+  $("#btn-click").click({
+    user: "Peter",
+    domain: "google.com"
+  }, function (event) {
+    greetUser(event.data);
+  });
+
+  function greetUser(userData) {
+    let userName = userData.user || "Anonymous";
+    let userDomain = userData.domain || "example.com";
+    alert("Welcome Back " + userName + "\n"+ "At " +  userDomain + "!");
+  }
+
   //****Delegated Events****
   // $("p").click(function () {
   //   $(this).slideUp();
@@ -9,16 +24,15 @@ $(function() {
   // $("#content").append("<p>This is a dynamically added paragraph.</p>");
 
   //Delegated Events
-  $("#content").on("click", "p",function () {
-    $(this).slideUp();
-  });
-
-  $("#content").append("<p>This is a dynamically added paragraph.</p>");
-  
-  $("body").on("mouseover", "li", function () {
-    $(this).css("color", "blue");
-  });
-
+  // $("#content").on("click", "p",function () {
+  //   $(this).slideUp();
+  // });
+  //
+  // $("#content").append("<p>This is a dynamically added paragraph.</p>");
+  //
+  // $("body").on("mouseover", "li", function () {
+  //   $(this).css("color", "blue");
+  // });
 
   //****Modularizing Event Handlers (No More Inline Functions)****
   //.on("click", function() {...})
