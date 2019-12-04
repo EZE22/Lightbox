@@ -1,33 +1,51 @@
 $(function() {
   // jQuery goes here...
 
+  //****Delegated Events****
+  // $("p").click(function () {
+  //   $(this).slideUp();
+  // });
+  //
+  // $("#content").append("<p>This is a dynamically added paragraph.</p>");
+
+  //Delegated Events
+  $("#content").on("click", "p",function () {
+    $(this).slideUp();
+  });
+
+  $("#content").append("<p>This is a dynamically added paragraph.</p>");
+  
+  $("body").on("mouseover", "li", function () {
+    $(this).css("color", "blue");
+  });
+
+
   //****Modularizing Event Handlers (No More Inline Functions)****
   //.on("click", function() {...})
-  function logEvent () {
-    console.log("mouse was clicked or a key was pushed");
-  }
-
-  $("html").on("click keydown", logEvent);
-
-  let index = 0;
-
-  let images = [
-    "images/laptop-mobile_small.jpg",
-    "images/laptop-on-table_small.jpg",
-    "images/people-office-group-team_small.jpg",
-  ];
-
-  let galleryImage = $(".gallery").find("img");
-
-  galleryImage.on("click", switchImage);
-
-  function switchImage () {
-    index = (index + 1) % images.length;
-    galleryImage.fadeOut(function () {
-      galleryImage.attr("src", images[index]).fadeIn();
-    });
-  }
-
+  // function logEvent () {
+  //   console.log("mouse was clicked or a key was pushed");
+  // }
+  //
+  // $("html").on("click keydown", logEvent);
+  //
+  // let index = 0;
+  //
+  // let images = [
+  //   "images/laptop-mobile_small.jpg",
+  //   "images/laptop-on-table_small.jpg",
+  //   "images/people-office-group-team_small.jpg",
+  // ];
+  //
+  // let galleryImage = $(".gallery").find("img");
+  //
+  // galleryImage.on("click", switchImage);
+  //
+  // function switchImage () {
+  //   index = (index + 1) % images.length;
+  //   galleryImage.fadeOut(function () {
+  //     galleryImage.attr("src", images[index]).fadeIn();
+  //   });
+  // }
 
   //****Adding the Same Handler for Multiple Events****
   // .on("click", function() {...})
