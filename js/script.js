@@ -1,20 +1,68 @@
 $(function() {
   // jQuery goes here...
 
-  //***Passing Additional Data to Events***
-  //Greeting a user
-  $("#btn-click").click({
-    user: "Peter",
-    domain: "google.com"
-  }, function (event) {
-    greetUser(event.data);
+  //***Handling KeyDown & keyUp Events***
+  //Keypress() => EVIL!
+  //Key Codes
+  // $("html").keydown(function (event) {
+  //   console.log(event.which);
+  // });
+
+  $("html").keydown(function (event) {
+    console.log(event.which);
   });
 
-  function greetUser(userData) {
-    let userName = userData.user || "Anonymous";
-    let userDomain = userData.domain || "example.com";
-    alert("Welcome Back " + userName + "\n"+ "At " +  userDomain + "!");
-  }
+  let ARROW_UP = 87;
+  let ARROW_DOWN = 83;
+  let ARROW_RIGHT = 68;
+  let ARROW_LEFT = 65;
+
+  $("html").keydown(function (event) {
+    if(event.which === ARROW_RIGHT) {
+      $(".blue-box").stop().animate({
+        marginLeft: "+=10px"
+      }, 50);
+    } else if(event.which === ARROW_LEFT) {
+      $(".blue-box").stop().animate({
+        marginLeft: "-=10px"
+      }, 50);
+    } else if(event.which === ARROW_DOWN) {
+      $(".blue-box").stop().animate({
+        marginTop: "+=10px"
+      }, 50);
+    } else if(event.which === ARROW_UP) {
+      $(".blue-box").stop().animate({
+        marginTop: "-=10px"
+      }, 50);
+    }
+  });
+
+  // $("html").keydown(function (event) {
+  //   if(event.which === ARROW_RIGHT) {
+  //     $(".blue-box").fadeTo(500, 0.5);
+  //   } else if(event.which === ARROW_LEFT) {
+  //     $(".red-box").fadeTo(1000, 0.7);
+  //   } else {
+  //     $(".green-box").fadeOut();
+  //   }
+  // });
+
+
+
+  //***Passing Additional Data to Events***
+  //Greeting a user
+  // $("#btn-click").click({
+  //   user: "Peter",
+  //   domain: "google.com"
+  // }, function (event) {
+  //   greetUser(event.data);
+  // });
+  //
+  // function greetUser(userData) {
+  //   let userName = userData.user || "Anonymous";
+  //   let userDomain = userData.domain || "example.com";
+  //   alert("Welcome Back " + userName + "\n"+ "At " +  userDomain + "!");
+  // }
 
   //****Delegated Events****
   // $("p").click(function () {
