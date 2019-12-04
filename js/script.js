@@ -1,17 +1,38 @@
 $(function() {
   // jQuery goes here...
 
-  //****Adding MouseEnter and MouseLeave Handlers****
-  $("#btn-hover").hover(function () {
-    alert("button was hovered");
+  //****Adding the Same Handler for Multiple Events****
+  // .on("click", function() {...})
+  // $("html").on("click keydown", function () {
+  //   console.log("mouse was clicked or a key was pushed");
+  // });
+
+  let images = [
+      "images/laptop-mobile_small.jpg",
+      "images/laptop-on-table_small.jpg",
+      "images/people-office-group-team_small.jpg",
+  ];
+
+  let index = 0;
+  $(".gallery").find("img").on("click", function () {
+    index = (index + 1) % images.length;
+    $(this).fadeOut(function () {
+      $(this).attr("src", images[index]).fadeIn();
+    });
   });
 
-  $(".green-box").hover(function () {
-    $(this).text("I was hovered");
-  });
+
+  //****Adding MouseEnter and MouseLeave Handlers****
+  // $("#btn-hover").hover(function () {
+  //   alert("button was hovered");
+  // });
+  //
+  // $(".green-box").hover(function () {
+  //   $(this).text("I was hovered");
+  // });
 
   //this is so that when i leave the blue box the hover event dose not fire again. I will reset.
-  let blueBox = $(".blue-box");
+  //let blueBox = $(".blue-box");
   // blueBox.mouseenter(function () {
   //   $(this).stop().fadeTo(500, 0.7);
   // });
@@ -20,11 +41,11 @@ $(function() {
   // });
 
   //Another way to handel this is to use: hover(handlerIn, handlerOut)
-  blueBox.hover(function() {
-    $(this).stop().fadeTo(500, 0.7);
-  }, function () {
-    $(this).stop().fadeTo(500, 1);
-  });
+  // blueBox.hover(function() {
+  //   $(this).stop().fadeTo(500, 0.7);
+  // }, function () {
+  //   $(this).stop().fadeTo(500, 1);
+  // });
 
   //****Adding Hover Handlers****
   // :hover in CSS
