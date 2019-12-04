@@ -1,6 +1,21 @@
 $(function() {
   // jQuery goes here...
 
+  //****Adding Hover Handlers****
+  // :hover in CSS
+  // $(".green-box").hover(function () {
+  //   $(this).text("I was hovered");
+  // })
+
+  // $("#btn-hover").hover(function () {
+  //   $(this).fadeOut(2000);
+  // });
+
+  // $("#btn-click").click(function () {
+  //   console.log("click");
+  //   $(".red-box").fadeOut("2000");
+  // });
+
   //***Working with Click Handlers****
   // $("#btn-click").click(function (event) {
   //   console.log(event);
