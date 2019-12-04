@@ -1,25 +1,53 @@
 $(function() {
   // jQuery goes here...
 
+  //****Modularizing Event Handlers (No More Inline Functions)****
+  //.on("click", function() {...})
+  function logEvent () {
+    console.log("mouse was clicked or a key was pushed");
+  }
+
+  $("html").on("click keydown", logEvent);
+
+  let index = 0;
+
+  let images = [
+    "images/laptop-mobile_small.jpg",
+    "images/laptop-on-table_small.jpg",
+    "images/people-office-group-team_small.jpg",
+  ];
+
+  let galleryImage = $(".gallery").find("img");
+
+  galleryImage.on("click", switchImage);
+
+  function switchImage () {
+    index = (index + 1) % images.length;
+    galleryImage.fadeOut(function () {
+      galleryImage.attr("src", images[index]).fadeIn();
+    });
+  }
+
+
   //****Adding the Same Handler for Multiple Events****
   // .on("click", function() {...})
   // $("html").on("click keydown", function () {
   //   console.log("mouse was clicked or a key was pushed");
   // });
 
-  let images = [
-      "images/laptop-mobile_small.jpg",
-      "images/laptop-on-table_small.jpg",
-      "images/people-office-group-team_small.jpg",
-  ];
-
-  let index = 0;
-  $(".gallery").find("img").on("click", function () {
-    index = (index + 1) % images.length;
-    $(this).fadeOut(function () {
-      $(this).attr("src", images[index]).fadeIn();
-    });
-  });
+  // let images = [
+  //     "images/laptop-mobile_small.jpg",
+  //     "images/laptop-on-table_small.jpg",
+  //     "images/people-office-group-team_small.jpg",
+  // ];
+  //
+  // let index = 0;
+  // $(".gallery").find("img").on("click", function () {
+  //   index = (index + 1) % images.length;
+  //   $(this).fadeOut(function () {
+  //     $(this).attr("src", images[index]).fadeIn();
+  //   });
+  // });
 
 
   //****Adding MouseEnter and MouseLeave Handlers****
