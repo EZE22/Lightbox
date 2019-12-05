@@ -1,41 +1,60 @@
 $(function() {
   // jQuery goes here...
 
+  //***The Focus & Blur Events***
+  // let inputFields = $("input:text, input:password, textarea");
+  // inputFields.focus(function () {
+  //   $(this).css("box-shadow", "0 0 4px #666");
+  // });
+  //
+  // inputFields.blur(function () {
+  //   $(this).css("box-shadow", "none");
+  // });
+  //
+  // $("#name").blur(function () {
+  //   let text = $(this).val();
+  //   if(text.length < 3){
+  //     $(this).css("box-shadow", "0 0 4px #811");
+  //   } else {
+  //     $(this).css("box-shadow", "0 0 4px #181");
+  //   }
+  // });
+
   //***Handling KeyDown & keyUp Events***
-  //Keypress() => EVIL!
+  //Keypressdd() => EVIL!
   //Key Codes
   // $("html").keydown(function (event) {
   //   console.log(event.which);
   // });
 
-  $("html").keydown(function (event) {
-    console.log(event.which);
-  });
-
-  let ARROW_UP = 87;
-  let ARROW_DOWN = 83;
-  let ARROW_RIGHT = 68;
-  let ARROW_LEFT = 65;
-
-  $("html").keydown(function (event) {
-    if(event.which === ARROW_RIGHT) {
-      $(".blue-box").stop().animate({
-        marginLeft: "+=10px"
-      }, 50);
-    } else if(event.which === ARROW_LEFT) {
-      $(".blue-box").stop().animate({
-        marginLeft: "-=10px"
-      }, 50);
-    } else if(event.which === ARROW_DOWN) {
-      $(".blue-box").stop().animate({
-        marginTop: "+=10px"
-      }, 50);
-    } else if(event.which === ARROW_UP) {
-      $(".blue-box").stop().animate({
-        marginTop: "-=10px"
-      }, 50);
-    }
-  });
+  // $("html").keydown(function (event) {
+  //   console.log(event.which);
+  // });
+  //
+  // let ARROW_UP = 87;
+  // let ARROW_DOWN = 83;
+  // let ARROW_RIGHT = 68;
+  // let ARROW_LEFT = 65;
+  //
+  // $("html").keydown(function (event) {
+  //   if(event.which === ARROW_RIGHT) {
+  //     $(".blue-box").stop().animate({
+  //       marginLeft: "+=10px"
+  //     }, 1);
+  //   } else if(event.which === ARROW_LEFT) {
+  //     $(".blue-box").stop().animate({
+  //       marginLeft: "-=10px"
+  //     }, 1);
+  //   } else if(event.which === ARROW_DOWN) {
+  //     $(".blue-box").stop().animate({
+  //       marginTop: "+=10px"
+  //     }, 1);
+  //   } else if(event.which === ARROW_UP) {
+  //     $(".blue-box").stop().animate({
+  //       marginTop: "-=10px"
+  //     }, 1);
+  //   }
+  // });
 
   // $("html").keydown(function (event) {
   //   if(event.which === ARROW_RIGHT) {
