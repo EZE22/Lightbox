@@ -1,6 +1,21 @@
 $(function() {
   // jQuery goes here...
 
+  //***Using the Change Event***
+  $("#checkbox").change(function () {
+    let isChecked = $(this).is(":checked");
+    if(isChecked) {
+      $(this).add("label[for='']").css("box-shadow", "0 0 4px #181");
+    } else {
+      $(this).add("label[for='']").css("box-shadow", "0 0 4px #881");
+    }
+  });
+
+  $("#selection").change(function () {
+    let selectedOption = $(this).find(":selected").text();
+    alert(selectedOption);
+  });
+
   //***The Focus & Blur Events***
   // let inputFields = $("input:text, input:password, textarea");
   // inputFields.focus(function () {
