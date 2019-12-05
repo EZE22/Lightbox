@@ -1,20 +1,31 @@
 $(function() {
   // jQuery goes here...
 
-  //***Using the Change Event***
-  $("#checkbox").change(function () {
-    let isChecked = $(this).is(":checked");
-    if(isChecked) {
-      $(this).add("label[for='']").css("box-shadow", "0 0 4px #181");
+  //***Handling the Submit Event***
+  $("#form").submit(function (event) {
+    let textarea = $("#message");
+    if(textarea.val().trim() === ""){
+      textarea.css("box-shadow", "0 0 10px #811");
+      event.preventDefault();
     } else {
-      $(this).add("label[for='']").css("box-shadow", "0 0 4px #881");
+      // form will be submitted
     }
   });
 
-  $("#selection").change(function () {
-    let selectedOption = $(this).find(":selected").text();
-    alert(selectedOption);
-  });
+  //***Using the Change Event***
+  // $("#checkbox").change(function () {
+  //   let isChecked = $(this).is(":checked");
+  //   if(isChecked) {
+  //     $(this).add("label[for='']").css("box-shadow", "0 0 4px #181");
+  //   } else {
+  //     $(this).add("label[for='']").css("box-shadow", "0 0 4px #881");
+  //   }
+  // });
+  //
+  // $("#selection").change(function () {
+  //   let selectedOption = $(this).find(":selected").text();
+  //   alert(selectedOption);
+  // });
 
   //***The Focus & Blur Events***
   // let inputFields = $("input:text, input:password, textarea");
