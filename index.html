@@ -60,17 +60,20 @@
   </ul>
   -->
   <form id="form" action="">
-    <input id="name" type="text"  value="Peter"><br>
-    <input id="password" type="password"><br>
-    <input id="amount" type="range" min="1" max="10" value="7"><br>
-    <input id="checkbox" type="checkbox" name="cb" checked><label for="">Check me</label><br>
-    <textarea id="message" name="" id="" cols="30" rows="10"></textarea><br>
-    <select name="" id="selection">
-      <option value="">Option 1</option>
-      <option value="">Option 2</option>
-      <option value="">Option 3</option>
-      <option value="">Option 4</option>
-    </select>
+    <input id="name" type="text" placeholder="Enter your name">
+    <span id="name-feedback"></span><br>
+
+    <input id="password" type="password" placeholder="Enter a password">
+    <span id="password-feedback"></span><br>
+
+    <input id="amount" type="range" min="1" max="9" value="5"><br>
+
+    <textarea id="message" name="" id="" cols="30" rows="10"></textarea>
+    <span id="message-feedback"></span><br><br>
+
+    <input id="checkbox" type="checkbox" name="cb" checked><label for="">Check me</label>
+    <span id="checkbox-feedback"></span><br><br>
+
     <input id="submit" type="submit" value="Submit">
   </form>
 </div>

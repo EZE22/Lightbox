@@ -1,16 +1,80 @@
 $(function() {
   // jQuery goes here...
 
-  //***Handling the Submit Event***
-  $("#form").submit(function (event) {
-    let textarea = $("#message");
-    if(textarea.val().trim() === ""){
-      textarea.css("box-shadow", "0 0 10px #811");
-      event.preventDefault();
-    } else {
-      // form will be submitted
+  //***Complete Form Validation on Submit***
+  $("#form").submit(function () {
+    let name = $("#name").val();
+    let password = $("#password").val();
+    let message = $("#message").val();
+    let checked = $("#checkbox").is(":checked");
+
+    validateNameField(name, event);
+    validatePassWord(password, event);
+    validateMessageField(message, event);
+    validateCheckbox(checked, event);
+
+    //Validate checkbox
+    function validateCheckbox(isCheckbox, event) {
+      if(!isCheckbox) {
+        $("#checkbox-feedback").text("Please agree to this");
+        event.preventDefault();
+      } else {
+        $("#checkbox-feedback").text("");
+      }
     }
+
+    //Validate message field
+    function validateMessageField(message, event) {
+      if(!isValidMessage(message)) {
+        $("#message-feedback").text("Please enter a message");
+        event.preventDefault();
+      } else {
+        $("#message-feedback").text("");
+      }
+    }
+    function isValidMessage(message) {
+      return message.trim() !== "";
+    }
+    
+    //Validate password field 
+    function validatePassWord(password, event) {
+      if(!isValidPassword(password)) {
+        $("#password-feedback").text("The password should have at least 6 characters");
+        event.preventDefault();
+      } else {
+        $("#password-feedback").text("");
+      }
+    }
+    function isValidPassword(password) {
+      return password.length >= 6 && /.*[0-9].*/.test(password);
+    }
+    
+    //Validate name field 
+    function validateNameField(name, event) {
+      if(!isValidName(name)) {
+        $("#name-feedback").text("Please enter at least two characters");
+        event.preventDefault();
+      } else {
+        $("#name-feedback").text("");
+      }
+    }
+    function isValidName(name) {
+      return name.length >= 2;
+    }
+
   });
+
+
+  //***Handling the Submit Event***
+  // $("#form").submit(function (event) {
+  //   let textarea = $("#message");
+  //   if(textarea.val().trim() === ""){
+  //     textarea.css("box-shadow", "0 0 10px #811");
+  //     event.preventDefault();
+  //   } else {
+  //     // form will be submitted
+  //   }
+  // });
 
   //***Using the Change Event***
   // $("#checkbox").change(function () {
