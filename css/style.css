@@ -50,7 +50,6 @@ body {
   clear: both; }
 
 #content {
-  text-align: center;
   overflow: auto;
   width: 80%;
   background-color: #fff;
